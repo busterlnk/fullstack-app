@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
-    && docker-php-ext-install -j$(nproc) gd pdo pdo_pgsql mbstring zip exif pcntl intl
+    && docker-php-ext-install -j$(nproc) gd pdo pdo_pgsql pdo_mysql mbstring zip exif pcntl intl
 
 # Instalar Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
