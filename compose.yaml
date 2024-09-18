@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   php:
     user: "${UID:-1000}:${GID:-1000}"
