@@ -6,5 +6,5 @@ controllers:
 
 
 dashboard:
-    path: /admin
+    path: /api/admin
     controller: App\Controller\Admin\DashboardController::index

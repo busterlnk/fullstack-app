@@ -19,6 +19,12 @@ class DashboardController extends AbstractDashboardController
     ) {
     }
 
+    #[Route('/api')]
+    public function redirectToAdmin()
+    {
+        return $this->redirectToRoute('admin');
+    }
+
     #[Route('/api/admin', name: 'admin')]
     public function index(): Response
     {
@@ -100,6 +106,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+
         MenuItem::linkToCrud('Product', 'fas fa-list', Product::class);
     }
 }
